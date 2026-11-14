@@ -1,9 +1,10 @@
 FROM mcr.microsoft.com/devcontainers/base:ubuntu
 
-# System-Werkzeuge, Java-Laufzeit für OpenFastTrace, Python mit pytest für die Übung produktsuche
+# System-Werkzeuge, Java-Laufzeit für OpenFastTrace, Python mit pytest für die Übung produktsuche.
+# pip3 und venv für eigene Pakete: Ubuntu lässt pip3 install nur in einer virtuellen Umgebung zu (python3 -m venv .venv)
 RUN apt-get update && \
     apt-get install -y --no-install-recommends curl ca-certificates jq git \
-        openjdk-21-jre-headless python3 python3-pytest && \
+        openjdk-21-jre-headless python3 python3-pytest python3-pip python3-venv && \
     rm -rf /var/lib/apt/lists/*
 
 # Node.js 22: OpenSpec 2.0.0 braucht 22.12 oder neuer, die Übungen nutzen node --test
