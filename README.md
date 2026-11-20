@@ -22,4 +22,6 @@ Im Container stehen bereit:
 | Node.js | 22 | `node --version` |
 | OpenFastTrace | 4.11.0, mit Java 21 | `java -jar "$OFT_JAR" help` |
 
+OpenFastTrace steht unter GPL-3.0-only. Der Container lädt es beim Bau von Maven Central. Wer das gebaute Image weitergibt, prüft die Pflichten der GPL-3.0. Eigene Texte stehen unter MIT (LICENSE). OpenSpec, Claude Code und OpenFastTrace sind Namen oder Marken ihrer Inhaber.
+
 

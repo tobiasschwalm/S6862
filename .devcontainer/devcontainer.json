@@ -7,17 +7,20 @@
     "source=claude-code-config-${devcontainerId},target=/home/vscode/.claude,type=volume"
   ],
   "containerEnv": {
-    "CLAUDE_CONFIG_DIR": "/home/vscode/.claude"
+    "CLAUDE_CONFIG_DIR": "/home/vscode/.claude",
+    "ANTHROPIC_MODEL": "sonnet"
   },
   "customizations": {
     "vscode": {
       "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "open-in-browser.default": "chrome"
       },
       "extensions": [
         "anthropic.claude-code",
         "redhat.vscode-yaml",
-        "ms-python.python"
+        "ms-python.python",
+        "techer.open-in-browser"
       ]
     }
   },
