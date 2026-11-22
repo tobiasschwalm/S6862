@@ -1,8 +1,9 @@
 ---
 # Gekürzte Vorlage nach MADR 4.0.0 (https://github.com/adr/madr, Tag 4.0.0), MIT OR CC0-1.0; Herkunft siehe HERKUNFT.md.
 # Datei kopieren nach adr/NNNN-kurzer-titel.md, Nummer fortlaufend, Titel mit Bindestrichen.
-# status: proposed, accepted, rejected, deprecated oder "superseded by ADR-NNNN".
-# Ein akzeptiertes ADR wird nicht mehr geändert; eine neue Entscheidung bekommt ein neues ADR, das alte den Status superseded.
+# status: proposed, accepted, rejected oder deprecated.
+# Ein angenommenes ADR wird nicht mehr geändert. Eine neue Entscheidung bekommt ein neues ADR mit der Kopfzeile supersedes: ADR-NNNN.
+# MADR selbst setzt stattdessen am alten ADR den Status "superseded by ADR-NNNN".
 status: proposed
 date: JJJJ-MM-TT
 decision-makers: "{wer entscheidet}"
@@ -14,7 +15,7 @@ decision-makers: "{wer entscheidet}"
 
 ## Context and Problem Statement
 
-<!-- Zwei bis drei Sätze: Ausgangslage und die Frage, die entschieden wird. Bezug nennen, etwa Capability oder Change. -->
+<!-- Zwei bis drei Sätze: Ausgangslage und die Frage, die entschieden wird. Bezug nennen, zum Beispiel Capability oder Change. -->
 
 ## Decision Drivers
 

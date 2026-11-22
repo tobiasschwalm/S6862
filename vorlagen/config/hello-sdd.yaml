@@ -1,12 +1,19 @@
 schema: spec-driven
 
 context: |
-  hello: Browser-Anwendung, die eine Begrüßung zeigt.
-  Plain JavaScript im Browser, ohne Bibliotheken und ohne Build-Schritt.
-  Tests mit dem eingebauten Testmodul node:test, ohne Pakete.
-  Specs auf Deutsch.
+  Hello World im Browser: Die Seite zeigt eine Begrüßung.
+  Browseranwendung in JavaScript ohne externe Abhängigkeiten:
+  kein package.json, keine Pakete, kein Build-Schritt,
+  keine Skripte, Stylesheets oder Schriften von fremden Adressen (CDN).
+  Die Seite ist index.html. Eigener Code liegt unter src/ und wird mit relativem Pfad eingebunden.
+  Skripte als klassisches <script src="...">, ohne type="module", damit index.html auch ohne Server startet.
+  Start: index.html in VS Code mit der Erweiterung Live Preview öffnen.
+  Die Capability heißt begruessung.
+  Artefakte auf Deutsch.
 
 rules:
+  specs:
+    - Die Schlüsselwörter bleiben englisch, SHALL oder MUST im Requirement, WHEN und THEN im Szenario.
   tasks:
-    - Je Szenario zuerst ein Unit-Test, vor dem Code. Er übernimmt das erwartete Ergebnis wörtlich aus dem THEN.
-    - Der Testname enthält den Szenario-Namen.
+    - Kein Task legt package.json an, installiert ein Paket oder bindet eine Datei von fremder Adresse ein.
+    - Der letzte Task nennt, was eine Person in Live Preview je Szenario prüft. Den Haken setzt die Person.

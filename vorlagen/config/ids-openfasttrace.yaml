@@ -8,7 +8,7 @@ context: |
 
 rules:
   specs:
-    - "Erste Zeile im Rumpf eines Requirements ist seine ID mit Revision in Backticks, z. B. `req~srs-1~1`."
+    - "Erste Zeile im Rumpf eines Requirements ist seine ID mit Revision in Backticks, zum Beispiel `req~srs-1~1`."
     - "Darunter der Satz mit SHALL, dann Covers: mit der Systemanforderung als Listenpunkt und Needs: impl, utest."
     - Ändert sich der Text eines Requirements, steigt die Revision in der ID.
 

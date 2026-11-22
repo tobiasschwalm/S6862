@@ -1,0 +1,2 @@
+# Batch-Dateien unter Windows immer mit CRLF, sonst bricht cmd bei Sprungmarken
+*.bat text eol=crlf

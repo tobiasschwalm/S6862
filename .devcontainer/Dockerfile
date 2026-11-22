@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/base:ubuntu
+FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04
 
 # System-Werkzeuge, Java-Laufzeit für OpenFastTrace, Python mit pytest für die Übung produktsuche.
 # pip3 und venv für eigene Pakete: Ubuntu lässt pip3 install nur in einer virtuellen Umgebung zu (python3 -m venv .venv)

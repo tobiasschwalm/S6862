@@ -10,17 +10,23 @@
     "CLAUDE_CONFIG_DIR": "/home/vscode/.claude",
     "ANTHROPIC_MODEL": "sonnet"
   },
+  "remoteEnv": {
+    // API-Schlüssel aus der Umgebungsvariablen des eigenen Rechners (Windows, macOS, Linux), Anleitung in der README.
+    // Ist sie dort nicht gesetzt, bleibt der Wert leer und Claude Code verlangt die Anmeldung.
+    // Nach einer Änderung VS Code ganz neu starten, danach reicht "Reload Window", kein Rebuild.
+    "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
+  },
   "customizations": {
     "vscode": {
       "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash",
-        "open-in-browser.default": "chrome"
+        "terminal.integrated.defaultProfile.linux": "bash"
       },
       "extensions": [
         "anthropic.claude-code",
         "redhat.vscode-yaml",
         "ms-python.python",
-        "techer.open-in-browser"
+        "ms-vscode.live-server",
+        "mathematic.vscode-pdf"
       ]
     }
   },

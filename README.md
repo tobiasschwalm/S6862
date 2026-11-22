@@ -11,7 +11,25 @@ Voraussetzungen: [Docker Desktop](https://www.docker.com/products/docker-desktop
 3. Warten, bis der Container gebaut ist (einmalig einige Minuten)
 4. Einmal anmelden: im Terminal `claude` starten oder in der Claude-Code-Erweiterung. Die Anmeldung gilt für beide.
 
-Die Anmeldung liegt in einem Volume auf `~/.claude` und bleibt bei „Rebuild Container“ erhalten. Öffnet sich im Container kein Browser, die Adresse aus dem Terminal im Browser des eigenen Rechners öffnen und den Code einfügen. Ist `ANTHROPIC_API_KEY` gesetzt, benutzt Claude Code den Schlüssel statt der Anmeldung.
+Die Anmeldung liegt in einem Volume auf `~/.claude` und bleibt bei „Rebuild Container“ erhalten. Öffnet sich im Container kein Browser, die Adresse aus dem Terminal im Browser des eigenen Rechners öffnen und den Code einfügen. Als Modell ist Sonnet eingestellt, wechseln lässt es sich in Claude Code mit `/model`.
+
+### API-Schlüssel statt Anmeldung
+
+Ist auf dem eigenen Rechner die Umgebungsvariable `ANTHROPIC_API_KEY` gesetzt, übernimmt der Container sie, und Claude Code benutzt den Schlüssel statt der Anmeldung. Der Schlüssel steht dabei in keiner Datei des Repositorys.
+
+1. Variable auf dem eigenen Rechner setzen:
+   - Windows: `set-anthropic-key.bat` doppelklicken und den Schlüssel eingeben, oder in PowerShell oder der Eingabeaufforderung `setx ANTHROPIC_API_KEY "sk-ant-…"`
+   - macOS und Linux: die Zeile `export ANTHROPIC_API_KEY="sk-ant-…"` in `~/.zshrc` oder `~/.bashrc` eintragen
+2. VS Code ganz beenden, alle Fenster, und neu starten. Ein laufendes VS Code sieht die neue Variable nicht.
+3. Den Ordner wie oben im Container öffnen und im Terminal des Containers prüfen: `test -n "$ANTHROPIC_API_KEY" && echo gesetzt`
+
+Liegt das Repository unter Windows in WSL und wird es von dort geöffnet, gelangt die Windows-Variable nur über `WSLENV` nach WSL. Einmal in PowerShell setzen und danach WSL mit `wsl --shutdown` neu starten:
+
+```powershell
+setx WSLENV "ANTHROPIC_API_KEY/u$(if ($env:WSLENV) { ':' + $env:WSLENV })"
+```
+
+Ein neuer Schlüssel gilt nach dem Neustart von VS Code und „Reload Window“, ohne Neubau des Containers.
 
 Im Container stehen bereit:
 
