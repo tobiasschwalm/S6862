@@ -2,14 +2,12 @@ schema: spec-driven
 
 context: |
   ToDo-App im Browser für eine Person, ohne Anmeldung.
-  Ziel: Aufgaben anlegen, ändern und löschen.
   Browseranwendung in JavaScript ohne externe Abhängigkeiten:
   kein package.json, keine Pakete, kein Build-Schritt,
   keine Skripte, Stylesheets oder Schriften von fremden Adressen (CDN).
   Die Seite ist index.html. Eigener Code liegt unter src/ und wird mit relativem Pfad eingebunden.
   Skripte als klassisches <script src="...">, ohne type="module", damit index.html auch ohne Server startet.
   Start: index.html in VS Code mit der Erweiterung Live Preview öffnen.
-  Ein ToDo heißt in den Artefakten „Aufgabe“, die Capability aufgaben.
   Artefakte auf Deutsch.
 
 rules:
