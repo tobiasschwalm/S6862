@@ -1,19 +1,12 @@
 schema: spec-driven
 
 context: |
-  Hello World im Browser: Die Seite zeigt eine Begrüßung.
-  Browseranwendung in JavaScript ohne externe Abhängigkeiten:
-  kein package.json, keine Pakete, kein Build-Schritt,
-  keine Skripte, Stylesheets oder Schriften von fremden Adressen (CDN).
-  Die Seite ist index.html. Eigener Code liegt unter src/ und wird mit relativem Pfad eingebunden.
-  Skripte als klassisches <script src="...">, ohne type="module", damit index.html auch ohne Server startet.
-  Start: index.html in VS Code mit der Erweiterung Live Preview öffnen.
+  Hello World im Browser: index.html zeigt eine Begrüßung.
+  Browseranwendung in JavaScript ohne externe Abhängigkeiten: kein package.json, keine Pakete, kein Build-Schritt, nichts von fremden Adressen.
+  Eigener Code unter src/, eingebunden als klassisches <script src="..."> ohne type="module".
   Die Capability heißt begruessung.
-  Artefakte auf Deutsch.
+  Artefakte auf Deutsch, die Schlüsselwörter SHALL, MUST, WHEN und THEN bleiben englisch.
 
 rules:
-  specs:
-    - Die Schlüsselwörter bleiben englisch, SHALL oder MUST im Requirement, WHEN und THEN im Szenario.
   tasks:
-    - Kein Task legt package.json an, installiert ein Paket oder bindet eine Datei von fremder Adresse ein.
-    - Der letzte Task nennt, was eine Person in Live Preview je Szenario prüft. Den Haken setzt die Person.
+    - Jeden Task erledigt der Agent selbst, kein Task wartet auf eine Person.

@@ -1,0 +1,30 @@
+schema: spec-driven
+
+context: |
+  ToDo-App im Browser.
+  Projektvorgaben (Zweck, Technik, Oberfläche) in docs/projektvorgaben.md.
+  Architekturentscheidungen als ADR in adr/, gültig bei status accepted.
+  Artefakte auf Deutsch, die Schlüsselwörter SHALL, MUST, WHEN und THEN bleiben englisch.
+  Tests mit dem eingebauten Testmodul node:test, ohne Pakete, Lauf mit node --test.
+
+rules:
+  proposal:
+    - Vorher docs/projektvorgaben.md lesen.
+  design:
+    - Vorher adr/ lesen, Abweichung nur mit neuem ADR.
+    - Logik ohne Zugriff auf die Seite in einer eigenen Datei unter src/, für Node mit if (typeof module !== "undefined") module.exports freigegeben.
+    - Das heutige Datum ist ein Parameter der Logik, nie fest im Code.
+  tasks:
+    - Jeden Task erledigt der Agent selbst, kein Task wartet auf eine Person.
+    - Je Szenario zuerst ein Task für einen Unit-Test im vorhandenen Testordner, sonst in test/, der das Szenario prüft. Der Testname ist der Szenario-Name.
+    - Fehlt die Funktion, vorher eine leere Funktion anlegen. Der Test ist dann rot, weil das Verhalten fehlt.
+    - Ein Code-Task setzt nur so viel um, wie der Test davor verlangt.
+
+operations:
+  apply:
+    guidance:
+      - Vor dem Umsetzen docs/projektvorgaben.md und adr/ lesen.
+      - Einen Test nach dem anderen. Vor jedem Code-Schritt den roten Lauf von node --test zeigen.
+      - Ist ein Test rot, den Code ändern und nie den Test.
+      - Ist ein neuer Test sofort grün, anhalten und melden.
+      - Bei Widerspruch zu einem ADR oder zur Spec anhalten und fragen.
